@@ -1,0 +1,78 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: andrew Windows, HP Inc., LIC=33C46-DJQD7-KXDUG-TH699-YXSRG-4NU7E
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Essential  Version: 5.25.2.0
+Toolchain Path:  D:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.9
+Assembler:       Armasm.exe V6.9
+Linker/Locator:  ArmLink.exe V6.9
+Library Manager: ArmAr.exe V6.9
+Hex Converter:   FromElf.exe V6.9
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DARMCM1.DLL V1.19.1.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
+Dialog DLL:      TARMCM1.DLL V1.14.0.0
+ 
+<h2>Project:</h2>
+D:\newsounder\stmproject\sounder32\MDK-ARM\sounder32.uvprojx
+Project File Date:  02/15/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.9', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'sounder32'
+../../../stm8_interrupt_vector.c(363): warning: incompatible pointer to integer conversion passing 'ADC_TypeDef *' to parameter of type 'int' [-Wint-conversion]
+        ADCvalue = ADC_GetConversionValue(ADC1);
+                                          ^~~~
+../Drivers/CMSIS/Device/ST/STM32C0xx/Include/stm32c031xx.h(596): note: expanded from macro 'ADC1'
+#define ADC1                ((ADC_TypeDef *) ADC1_BASE)
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../wrappers\wrap.h(94): note: passing argument to parameter here
+unsigned short ADC_GetConversionValue(int);
+                                         ^
+../../../stm8_interrupt_vector.c(503): warning: incompatible pointer types initializing 'interrupt_handler_t' (aka 'void (*)(void)') with an expression of type 'void (EXTI_HandleTypeDef *)' [-Wincompatible-pointer-types]
+        {0x82, HAL_EXTI_IRQHandler},    // irq13        andymod
+               ^~~~~~~~~~~~~~~~~~~
+2 warnings generated.
+compiling stm8_interrupt_vector.c...
+../../../wrappers/wrap.c(177): warning: incompatible pointer to integer conversion returning 'uint32_t *' (aka 'unsigned int *') from a function with result type 'int' [-Wint-conversion]
+        return(p);
+              ^~~
+1 warning generated.
+compiling wrap.c...
+linking...
+Program Size: Code=9212 RO-data=1144 RW-data=28 ZI-data=2044  
+FromELF: creating hex file...
+"sounder32\sounder32.axf" - 0 Error(s), 3 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.1.1
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32C0xx_DFP.1.0.0.pack
+                Keil.STM32C0xx_DFP.1.0.0
+                STMicroelectronics STM32C0 Series Device Support
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_sounder32
+  D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  D:\Keil_v5\ARM\PACK\Keil\STM32C0xx_DFP\1.0.0\Drivers\CMSIS\Device\ST\STM32C0xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.1.1
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
